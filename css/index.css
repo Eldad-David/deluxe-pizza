@@ -11,12 +11,19 @@ span {
 }
 small {
     color: rgb(255, 209, 94);
+    padding-bottom: 10px;
 }
 ol {
     text-align: left;
 }
-.col-md-4 {
-    text-align: center;
+
+
+.pizza1-text {
+    border: 2px solid goldenrod;
+    display: ;
+    padding: 10px;
+    padding-top: 10px;
+    margin: 5px;
 }
 .pizza1 {
     width: 300px;
