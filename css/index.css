@@ -1,6 +1,22 @@
+body {
+    text-align: center;
+    background-color: rgb(190, 183, 183);
+}
 .head {
     text-align: center;
     padding: 15px;
+}
+span {
+    color: gold;
+}
+small {
+    color: rgb(255, 209, 94);
+}
+ol {
+    text-align: left;
+}
+.col-md-4 {
+    text-align: center;
 }
 .pizza1 {
     width: 300px;
@@ -23,6 +39,31 @@
 
 
 
-@media screen  {
-    
+@media screen and (max-width: 992px) {
+    .pizza1 {
+        width: 200px;
+        height: 200px;
+    }
+    .pizza2 {
+        width: 200px;
+        height: 200px;
+    }
+    .pizza3 {
+        width: 200px;
+        height: 200px;
+    }   
+}
+@media screen and (max-width: 760px) {
+    .pizza1 {
+        width: 180px;
+        height: 180px;
+    }
+    .pizza2 {
+        width: 180px;
+        height: 180px;
+    }
+    .pizza3 {
+        width: 180px;
+        height: 180px;
+    }
 }
