@@ -38,18 +38,21 @@ h4 {
     padding: 10px;
     padding-top: 10px;
     margin: 5px;
+    display: none;
 }
 .pizza2-text {
     border: 2px solid goldenrod;
     padding: 10px;
     padding-top: 10px;
     margin: 5px;
+    display: none;
 }
 .pizza3-text {
     border: 2px solid goldenrod;
     padding: 10px;
     padding-top: 10px;
     margin: 5px;
+    display: none;
 }
 
 .pizza1 {
