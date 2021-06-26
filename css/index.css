@@ -100,8 +100,11 @@ select {
     background-color: white;
     width: 200px;
 }
-#quantity {
-    padding-left: 10px;
+.quantity {
+    margin-left: 10px;
+    width: 100px;
+    border: 1px solid skyblue;
+    border-radius: 5px;
 }
 
 .cart-total {
