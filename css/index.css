@@ -101,7 +101,9 @@ h4 {
     }
 }
 
-
+.hr-main {
+    border: 2px solid;
+}
 
 .container container-section {
     padding: 20px;
