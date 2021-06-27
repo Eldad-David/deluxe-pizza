@@ -19,17 +19,17 @@ $(document).ready(function() {
 // Business logic
 
 function sizePrice () {
-    var size = $("#pizzaSize").val();
-    if(size==="Small @Ksh.400") {
-        var pizzaSizePrice = 400 ;
+    var size = $("#size-classic").val();
+    if(size==="Small-500") {
+        var pizzaSizePrice = 500 ;
     }
-    else if(size==="Medium @Ksh.700") {
+    else if(size==="Medium-700") {
         var pizzaSizePrice = 700 ;
     }
     else  {
         var pizzaSizePrice = 900 ;
     }
-    return pizzaSizePrice
+    return pizzaSizePrice;
 }
 function crustPrice () {
     var crust= $(".crust").val();
@@ -45,17 +45,17 @@ function crustPrice () {
     else {
         var pizzaCrustPrice = 200;
     }
-    return pizzaCrustPrice
+    return pizzaCrustPrice;
 }
 function toppingsPrice () {
-    var toppings =$("#toppings").val();
-    var pizzaToppingPrice=  100;
-    return pizzaToppingPrice
+    var toppings =$(".toppings").val();
+    var pizzaToppingPrice=  50;
+    return pizzaToppingPrice;
 }
 function numberOfPizzaPrice () {
     var pizzas = $("#numberOfPizzas").val();
-    var numberOfPizza = parseInt(pizzas)
-    return numberOfPizza
+    var numberOfPizza = parseInt(pizzas);
+    return numberOfPizza;
 }
 function pizzaPrice () {
     var totalPrice = (sizePrice()+ crustPrice()+ toppingsPrice()) * numberOfPizzaPrice();
@@ -89,7 +89,7 @@ function resetFields() {
     var size = $("select#pizzaSize").val("");
     var crust = $("select#pizzaCrust").val("");
     var topping = $("select#toppings").val("");
-    var numberOfPizzas =$("input#numberOfPizzas").val("");
+    var pizzanumber =$("input#numberOfPizzas").val("");
    }
 
 
@@ -105,7 +105,7 @@ $(document).ready(function(){
      var size = $("#pizzaSize").val();
      var crust = $("#pizzaCrust").val();
      var topping = $("#toppings").val();
-     var numberOfPizzas =$("#numberOfPizzas").val();
+     var pizzanumber =$("#numberOfPizzas").val();
 
      var pizzaOrder = new Pizza(type, size, crust, topping, pizzanumber)
 
@@ -136,7 +136,7 @@ $(document).ready(function(){
      $("ul#pizzaForDelivery").append("<li>" + pizzaOrder.addEverything() + "</li>");
 
     })
-    $("#priceCheckout").click(function(event){
+    $("#purchase").click(function(event){
         event.preventDefault();
 
         var type = $("#pizzaType").val();
