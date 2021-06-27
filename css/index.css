@@ -114,18 +114,13 @@ select {
     border: 1px solid skyblue;
     background-color: white;
     width: 200px;
-}
-.quantity {
-    margin-left: 10px;
-    width: 100px;
-    border: 1px solid skyblue;
-    border-radius: 5px;
+    margin: 10px;
 }
 
-.cart-total {
-    padding: 10px;
+footer {
+    background-color: chocolate;
+    margin-top: 5px;
 }
-
 
 @media screen and (max-width: 992px) {
     .pizza1 {
