@@ -71,6 +71,18 @@ h4 {
     padding: 10px;
 }
 
+.subtotal {
+    display: none;
+}
+.remove {
+    margin: 3px;
+    background-color: red;
+    color: black;
+    border-radius: 5px;
+    padding: 2px;
+    margin-left: 10px;
+}
+
 .hr-main {
     border: 2px solid;
 }

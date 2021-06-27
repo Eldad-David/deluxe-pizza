@@ -14,5 +14,21 @@ $(document).ready(function() {
     $('.btn-cart').click(function() {
         alert('Your order has been put in the cart successfully!');
     });
-    
+});
+
+// Business logic
+
+$(document).ready(function() {
+    var subtotal = $('.small').val() * $('.quantity').val();
+    var removeBtn = $('<button class="remove"></button>').text('Remove');
+    $('.btn-cart').click(function tot() {
+        alert(subtotal);
+        $('.subtotal').show();
+        $(".subtotal").append("Kshs. " + subtotal);
+        $('.subtotal').append(removeBtn);
+        $('.remove').click(function() {
+            $('.subtotal').empty();
+            $('.subtotal').hide();
+        });
+    });
 });
