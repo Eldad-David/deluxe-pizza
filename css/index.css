@@ -147,6 +147,12 @@ label {
 button {
     margin: 5px;
 }
+ol li {
+    color: chocolate;
+}
+strong {
+    color: black;
+}
 
 footer {
     background-color: chocolate;

@@ -11,9 +11,6 @@ $(document).ready(function() {
     });
 
 
-    $('.btn-cart').click(function() {
-        alert('Your order has been put in the cart successfully!');
-    });
 });
 
 // Business logic
@@ -58,9 +55,11 @@ function numberOfPizzaPrice () {
     var numberOfPizza = parseInt(pizzas);
     return numberOfPizza;
 }
+
 function pizzaPrice () {
-    var totalPrice = (sizePrice()+ crustPrice()+ toppingsPrice()) * numberOfPizzaPrice();
-    alert(totalPrice);
+    var totalPrice = (sizePrice() + crustPrice() + toppingsPrice()) * numberOfPizzaPrice();
+    alert('Your order has been put in the cart successfully!');
+    alert('The price is : ' + totalPrice);
 
     $("#price").text(+ totalPrice);
 }
@@ -74,7 +73,7 @@ function Pizza( type,size,crust,toppings,pizzanumber) {
 }
 
 Pizza.prototype.sumup = function () {
-    return '<h3>Your order is: </h3>' +  this.size  + ", " + this.type + ", " + this.crust + ", " + this.toppings + ", " + this.pizzanumber +" pizzas"; 
+    return '<strong>Your order is : </strong>' +  this.size  + ", " + this.type + ", with a crust of " + this.crust + ", with " + this.toppings + ", " + this.pizzanumber + ' of them.'; 
 }
 
 function deliveryPizza () {
@@ -96,32 +95,19 @@ function resetFields() {
 $(document).ready(function(){
     $("#pickup").click(function(event){
         event.preventDefault();
-
         $("#pickup").show();
         $("#deliverpizza").hide();
 
-     var type = $("#type").val();
-     var size = $(".size").val();
-     var crust = $(".crust").val();
-     var topping = $(".toppings").val();
-     var pizzanumber =$(".quantity").val();
-
-     var pizzaOrder = new Pizza(type, size, crust, topping, pizzanumber);
-
-     $("#pizzaForPickUp").show();
-     $("#pizzaForDelivery").hide();
-     $("ul#pizzaForPickUp").append("<li>" + pizzaOrder.sumup() + "</li>");
-
     })
+
     $("#deliverpizza").click(function(event){
         event.preventDefault();
+
         $("#pickup").hide();
-        $('#location').show('2s');
         $('#deliverpizza').hide();
-        
-        var locate=$("#location").val();
-        $(".pizzalocation").text("Your order shall be delivered at : " + locate);
-        $(".deliverbutton").show();
+        var location = prompt('Where do you want it to be delivered?');
+        alert('Your order shall be delivered to ' + location + '.');
+        alert('The delivery fee is Kshs. 250.');
 
      var type = $("#type").val();
      var size = $(".size").val();
@@ -131,13 +117,8 @@ $(document).ready(function(){
 
      var pizzaOrder = new Pizza(type, size, crust, topping, pizzanumber);
 
-     $("#pizzaForPickUp").hide();
-     $("#pizzaForDelivery").show();
-     $("ul#pizzaForDelivery").append("<li>" + pizzaOrder.sumup() + "</li>");
-
     })
-    $(".btn-cart").click(function(event){
-        event.preventDefault();
+    $(".btn-cart").click(function(){
 
         var type = $("#type").val();
         var size = $(".size").val();
@@ -145,7 +126,7 @@ $(document).ready(function(){
         var topping = $(".toppings").val();
         var pizzanumber =$(".quantity").val();
         var pizzaOrder = new Pizza(type, size, crust, topping, pizzanumber);
-        $("ul#finalorder").append("<li>" + pizzaOrder.sumup() + "<li>");
+        $("ol#finalorder").append("<li>" + pizzaOrder.sumup() + "</li>");
 
     resetFields();
 
