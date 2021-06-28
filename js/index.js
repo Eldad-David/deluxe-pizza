@@ -10,9 +10,11 @@ $(document).ready(function() {
         $('.pizza3-text').slideDown('slow');
     });
 
-
 });
 
+function pickUpPizza () {
+    alert("Thank you for buying from us. Your order will be ready in 20min!");
+}
 // Business logic
 
 function sizePrice () {
@@ -60,8 +62,6 @@ function pizzaPrice () {
     var totalPrice = (sizePrice() + crustPrice() + toppingsPrice()) * numberOfPizzaPrice();
     alert('Your order has been put in the cart successfully!');
     alert('The price is : ' + totalPrice);
-
-    $("#price").text(+ totalPrice);
 }
 
 function Pizza( type,size,crust,toppings,pizzanumber) {
@@ -81,9 +81,7 @@ function deliveryPizza () {
     alert("Your order will be delivered to " + locationDelivery);
 }
 
-function pickUpPizza () {
-    alert("Thank you for buying from us. Your order will be ready in 20min!");
-}
+
 function resetFields() {
     var type = $("select#type").val("");
     var size = $("select.size").val("");
@@ -109,14 +107,6 @@ $(document).ready(function(){
         alert('Your order shall be delivered to ' + location + '.');
         alert('The delivery fee is Kshs. 250.');
 
-     var type = $("#type").val();
-     var size = $(".size").val();
-     var crust = $(".crust").val();
-     var topping = $(".toppings").val();
-     var pizzanumber =$(".quantity").val();
-
-     var pizzaOrder = new Pizza(type, size, crust, topping, pizzanumber);
-
     })
     $(".btn-cart").click(function(){
 
@@ -128,7 +118,7 @@ $(document).ready(function(){
         var pizzaOrder = new Pizza(type, size, crust, topping, pizzanumber);
         $("ol#finalorder").append("<li>" + pizzaOrder.sumup() + "</li>");
 
-    resetFields();
+        resetFields();
 
     });
 
