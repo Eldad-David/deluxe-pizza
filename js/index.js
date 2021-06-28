@@ -100,9 +100,9 @@ $(document).ready(function(){
         $("#pickUp").show();
         $("#deliverpizza").hide();
 
-     var type = $("#pizzaType").val();
-     var size = $("#pizzaSize").val();
-     var crust = $("#pizzaCrust").val();
+     var type = $("#type").val();
+     var size = $("#size").val();
+     var crust = $("#crustrust").val();
      var topping = $("#toppings").val();
      var pizzanumber =$(".quantity").val();
 
@@ -122,11 +122,11 @@ $(document).ready(function(){
         var locate=$("#location").val();
         $("#deliverpizza").text("The order will be delivered at " + locate)
 
-     var type = $("#pizzaType").val();
-     var size = $("#pizzaSize").val();
-     var crust = $("#pizzaCrust").val();
+     var type = $("#type").val();
+     var size = $("#size").val();
+     var crust = $("#crust").val();
      var topping = $("#toppings").val();
-     var pizzanumber =$("#numberOfPizzas").val();
+     var pizzanumber =$("#quantity").val();
 
      var pizzaOrder = new Pizza(type, size, crust, topping, pizzanumber)
 
@@ -138,11 +138,11 @@ $(document).ready(function(){
     $("#purchase").click(function(event){
         event.preventDefault();
 
-        var type = $("#pizzaType").val();
-        var size = $("#pizzaSize").val();
+        var type = $("#type").val();
+        var size = $("#size").val();
         var crust = $("#pizzaCrust").val();
         var topping = $("#toppings").val();
-        var pizzanumber =$("#numberOfPizzas").val();
+        var pizzanumber =$("#quantity").val();
    
         var pizzaOrder = new Pizza(type, size, crust, topping, pizzanumber)
    
