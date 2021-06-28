@@ -74,7 +74,7 @@ function Pizza( type,size,crust,toppings,pizzanumber) {
 }
 
 Pizza.prototype.addEverything = function () {
-    return this.type + "," + this.size + "," + this.crust + "," + this.toppings + "," + this.pizzanumber +" pizzas"; 
+    return '<h3>Your order is: </h3>' +  this.type  + ", " + this.size + ", " + this.crust + ", " + this.toppings + ", " + this.pizzanumber +" pizzas"; 
 }
 
 function deliveryPizza () {
@@ -106,7 +106,7 @@ $(document).ready(function(){
      var topping = $(".toppings").val();
      var pizzanumber =$(".quantity").val();
 
-     var pizzaOrder = new Pizza(type, size, crust, topping, pizzanumber)
+     var pizzaOrder = new Pizza(type, size, crust, topping, pizzanumber);
 
      $("#pizzaForPickUp").show();
      $("#pizzaForDelivery").hide();
@@ -128,7 +128,7 @@ $(document).ready(function(){
      var topping = $(".toppings").val();
      var pizzanumber =$(".quantity").val();
 
-     var pizzaOrder = new Pizza(type, size, crust, topping, pizzanumber)
+     var pizzaOrder = new Pizza(type, size, crust, topping, pizzanumber);
 
      $("#pizzaForPickUp").hide();
      $("#pizzaForDelivery").show();
@@ -144,7 +144,7 @@ $(document).ready(function(){
         var topping = $(".toppings").val();
         var pizzanumber =$(".quantity").val();
    
-        var pizzaOrder = new Pizza(type, size, crust, topping, pizzanumber)
+        var pizzaOrder = new Pizza(type, size, crust, topping, pizzanumber);
    
         $("ul#finalorder").append("<li>" + pizzaOrder.addEverything() + "</li>");
 
