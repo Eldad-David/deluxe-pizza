@@ -116,6 +116,21 @@ select {
     width: 200px;
     margin: 10px;
 }
+.quantity {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid skyblue;
+    background-color: white;
+    width: 200px;
+    margin: 10px;
+}
+label {
+    padding: 5px;
+    margin: 5px;
+}
+button {
+    margin: 5px;
+}
 
 footer {
     background-color: chocolate;

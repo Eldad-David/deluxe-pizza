@@ -19,27 +19,28 @@ $(document).ready(function() {
 // Business logic
 
 function sizePrice () {
-    var size = $("#size-classic").val();
-    if(size==="Small-500") {
+    var size = $(".size").val();
+    if(size === "Small-500") {
         var pizzaSizePrice = 500 ;
     }
-    else if(size==="Medium-700") {
+    else if(size === "Medium-700") {
         var pizzaSizePrice = 700 ;
     }
     else  {
-        var pizzaSizePrice = 900 ;
+        var pizzaSizePrice = 1000 ;
     }
+
     return pizzaSizePrice;
 }
 function crustPrice () {
-    var crust= $(".crust").val();
-    if(crust==='Crispy-100') {
+    var crust = $(".crust").val();
+    if(crust === 'Crispy-100') {
         var pizzaCrustPrice = 100;
     }
-    else if (crust==='Thin-50') {
+    else if (crust === 'Thin-50') {
         var pizzaCrustPrice = 50;
     }
-    else if(crust==='Stuffed-150') {
+    else if(crust === 'Stuffed-150') {
         var pizzaCrustPrice = 150;
     }
     else {
@@ -48,37 +49,37 @@ function crustPrice () {
     return pizzaCrustPrice;
 }
 function toppingsPrice () {
-    var toppings =$(".toppings").val();
-    var pizzaToppingPrice=  50;
+    var toppings = $(".toppings").val();
+    var pizzaToppingPrice =  50;
     return pizzaToppingPrice;
 }
 function numberOfPizzaPrice () {
-    var pizzas = $("#numberOfPizzas").val();
+    var pizzas = $(".quantity").val();
     var numberOfPizza = parseInt(pizzas);
     return numberOfPizza;
 }
 function pizzaPrice () {
     var totalPrice = (sizePrice()+ crustPrice()+ toppingsPrice()) * numberOfPizzaPrice();
-    console.log(totalPrice);
+    alert(totalPrice);
 
-    $("#price").text(+ totalPrice)
+    $("#price").text(+ totalPrice);
 }
 
-function Pizza( type,size,crust,topping,pizzanumber) {
+function Pizza( type,size,crust,toppings,pizzanumber) {
     this.type = type;
     this.size = size;
     this.crust = crust;
-    this.topping = topping;
+    this.toppings = toppings;
     this.pizzanumber = pizzanumber;
 }
 
 Pizza.prototype.addEverything = function () {
-    return this.type + "," + this.size + "," + this.crust + "," + this.topping + "," + this.pizzanumber +" pizzas"; 
+    return this.type + "," + this.size + "," + this.crust + "," + this.toppings + "," + this.pizzanumber +" pizzas"; 
 }
 
 function deliveryPizza () {
-    var deliverypoint = $("#location").val();
-    alert("Your order shall be delivered to " + deliverypoint);
+    var locationDelivery = $("#location").val();
+    alert("Your order will be delivered to " + locationDelivery);
 }
 
 function pickUpPizza () {
@@ -86,26 +87,24 @@ function pickUpPizza () {
 }
 function resetFields() {
     var type = $("select#pizzaType").val("");
-    var size = $("select#pizzaSize").val("");
-    var crust = $("select#pizzaCrust").val("");
-    var topping = $("select#toppings").val("");
-    var pizzanumber =$("input#numberOfPizzas").val("");
+    var size = $("select.size").val("");
+    var crust = $("select.crust").val("");
+    var toppings = $("select.toppings").val("");
+    var pizzanumber =$("input.quantity").val("");
    }
-
-
 
 $(document).ready(function(){
     $("#pickUp").click(function(event){
         event.preventDefault();
 
         $("#pickUp").show();
-        $("#delivery").hide();
+        $("#deliverpizza").hide();
 
      var type = $("#pizzaType").val();
      var size = $("#pizzaSize").val();
      var crust = $("#pizzaCrust").val();
      var topping = $("#toppings").val();
-     var pizzanumber =$("#numberOfPizzas").val();
+     var pizzanumber =$(".quantity").val();
 
      var pizzaOrder = new Pizza(type, size, crust, topping, pizzanumber)
 
@@ -114,14 +113,14 @@ $(document).ready(function(){
      $("ul#pizzaForPickUp").append("<li>" + pizzaOrder.addEverything() + "</li>");
 
     })
-    $("#delivery").click(function(event){
+    $("#deliverpizza").click(function(event){
         event.preventDefault();
 
-        $("#delivery").show();
+        $("#deliverpizza").show();
         $("#pickUp").hide();
         
-        var address=$("#location").val();
-        $("#delivery").text("The order will be delivered at " + address)
+        var locate=$("#location").val();
+        $("#deliverpizza").text("The order will be delivered at " + locate)
 
      var type = $("#pizzaType").val();
      var size = $("#pizzaSize").val();
