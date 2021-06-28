@@ -83,7 +83,7 @@
               <option>Chicken and Beef Pepperoni Pizza</option>
             </select>
             <h5>Size of pizza:</h5>
-            <select name="size" id="size">
+            <select name="size" class="size">
               <option></option>
               <option>Small-500</option>
               <option>Medium-700</option>
@@ -108,7 +108,7 @@
             </select>
             <h5>Quantity</h5>
             <input type="number" name="" class="quantity"> <br>
-            <button type="submit" class="btn-cart"  id="pizzaCheckout" onclick="pizzaPrice()">Add to Cart</button>
+            <button type="button" class="btn-cart"  id="pizzaCheckout" onclick="pizzaPrice()">Add to Cart</button>
           </div>
 
           <div class="col-md-6">
@@ -133,13 +133,13 @@
                 
               </div>
                <hr>
-            <button class="btn btn-primary" id="purchase" type="submit" onclick="pickUpPizza()">PURCHASE</button>
+            <button class="btn btn-primary" id="purchase" type="submit" onclick ="pickUpPizza()">PURCHASE</button>
           </div>
       </div>
 
       <hr class="hr-main">
     </div>
-
+  
     <footer>
       <div>
         <h3>Contact us:</h3>

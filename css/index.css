@@ -156,7 +156,9 @@ strong {
 
 footer {
     background-color: chocolate;
+    margin: 0px;
     margin-top: 5px;
+    padding: 0px;
 }
 
 @media screen and (max-width: 992px) {

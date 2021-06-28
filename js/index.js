@@ -12,9 +12,7 @@ $(document).ready(function() {
 
 });
 
-function pickUpPizza () {
-    alert("Thank you for buying from us. Your order will be ready in 20min!");
-}
+
 // Business logic
 
 function sizePrice () {
@@ -53,9 +51,15 @@ function toppingsPrice () {
     return pizzaToppingPrice;
 }
 function numberOfPizzaPrice () {
-    var pizzas = $(".quantity").val();
-    var numberOfPizza = parseInt(pizzas);
-    return numberOfPizza;
+    var pizzaquantity = $(".quantity").val();
+    var numberOfPizza = parseInt(pizzaquantity);
+    if (pizzaquantity < 1) {
+        alert('Invalid number of Pizzas!');
+        return false;
+    }
+    else {
+       return numberOfPizza; 
+    }
 }
 
 function pizzaPrice () {
@@ -121,5 +125,8 @@ $(document).ready(function(){
         resetFields();
 
     });
-
+    $('#purchase').click(function() {
+       alert("Thank you for buying from us. Your order will be ready in 20min!");
+       location.reload(); 
+    });
 });
