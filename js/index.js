@@ -66,6 +66,7 @@ function pizzaPrice () {
     var totalPrice = (sizePrice() + crustPrice() + toppingsPrice()) * numberOfPizzaPrice();
     alert('Your order has been put in the cart successfully!');
     alert('The price is : ' + totalPrice);
+    $("#price").text(+ totalPrice);
 }
 
 function Pizza( type,size,crust,toppings,pizzanumber) {
