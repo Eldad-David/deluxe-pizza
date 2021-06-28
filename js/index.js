@@ -86,7 +86,7 @@ function pickUpPizza () {
     alert("Your order will be ready in 20min!");
 }
 function resetFields() {
-    var type = $("select#pizzaType").val("");
+    var type = $("select#type").val("");
     var size = $("select.size").val("");
     var crust = $("select.crust").val("");
     var toppings = $("select.toppings").val("");
@@ -101,9 +101,9 @@ $(document).ready(function(){
         $("#deliverpizza").hide();
 
      var type = $("#type").val();
-     var size = $("#size").val();
-     var crust = $("#crustrust").val();
-     var topping = $("#toppings").val();
+     var size = $(".size").val();
+     var crust = $(".crust").val();
+     var topping = $(".toppings").val();
      var pizzanumber =$(".quantity").val();
 
      var pizzaOrder = new Pizza(type, size, crust, topping, pizzanumber)
@@ -123,10 +123,10 @@ $(document).ready(function(){
         $("#deliverpizza").text("The order will be delivered at " + locate)
 
      var type = $("#type").val();
-     var size = $("#size").val();
-     var crust = $("#crust").val();
-     var topping = $("#toppings").val();
-     var pizzanumber =$("#quantity").val();
+     var size = $(".size").val();
+     var crust = $(".crust").val();
+     var topping = $(".toppings").val();
+     var pizzanumber =$(".quantity").val();
 
      var pizzaOrder = new Pizza(type, size, crust, topping, pizzanumber)
 
@@ -139,14 +139,14 @@ $(document).ready(function(){
         event.preventDefault();
 
         var type = $("#type").val();
-        var size = $("#size").val();
-        var crust = $("#pizzaCrust").val();
-        var topping = $("#toppings").val();
-        var pizzanumber =$("#quantity").val();
+        var size = $(".size").val();
+        var crust = $(".crust").val();
+        var topping = $(".toppings").val();
+        var pizzanumber =$(".quantity").val();
    
         var pizzaOrder = new Pizza(type, size, crust, topping, pizzanumber)
    
-        $("ul#finalList").append("<li>" + pizzaOrder.addEverything() + "</li>");
+        $("ul#finalorder").append("<li>" + pizzaOrder.addEverything() + "</li>");
 
     resetFields();
 
