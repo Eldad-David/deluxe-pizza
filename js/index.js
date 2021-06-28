@@ -1,13 +1,13 @@
 // user interface logic
 $(document).ready(function() {
-    $('.pizza1').click(function() {
-        $('.pizza1-text').slideDown('slow');
+    $('.pizza1').hover(function() {
+        $('.pizza1-text').show('5s');
     });
-    $('.pizza2').click(function() {
-        $('.pizza2-text').slideDown('slow');
+    $('.pizza2').hover(function() {
+        $('.pizza2-text').show('5s');
     });
-    $('.pizza3').click(function() {
-        $('.pizza3-text').slideDown('slow');
+    $('.pizza3').hover(function() {
+        $('.pizza3-text').show('5s');
     });
 
 });

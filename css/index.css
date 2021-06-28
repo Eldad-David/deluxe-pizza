@@ -5,10 +5,15 @@ body {
 h1{
     font-size: 60px;
     font-family: 'Dancing Script', cursive;
+    color: chocolate;
 }
 .head {
     text-align: center;
     padding: 15px;
+    padding: 150px;
+    background-image: url(../images/eat.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 span {
     color: gold;
@@ -21,8 +26,9 @@ ol {
     text-align: left;
 }
 h2 {
-    padding: 10px;
+    padding: 20px;
     font-family: 'Dancing Script', cursive;
+    margin: 20px;
 }
 h3 {
     padding: 10px;
@@ -159,6 +165,7 @@ footer {
     margin: 0px;
     margin-top: 5px;
     padding: 0px;
+    background-size: cover;
 }
 
 @media screen and (max-width: 992px) {
