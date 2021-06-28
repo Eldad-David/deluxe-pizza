@@ -73,7 +73,7 @@ function Pizza( type,size,crust,toppings,pizzanumber) {
     this.pizzanumber = pizzanumber;
 }
 
-Pizza.prototype.addEverything = function () {
+Pizza.prototype.sumup = function () {
     return '<h3>Your order is: </h3>' +  this.size  + ", " + this.type + ", " + this.crust + ", " + this.toppings + ", " + this.pizzanumber +" pizzas"; 
 }
 
@@ -94,10 +94,10 @@ function resetFields() {
    }
 
 $(document).ready(function(){
-    $("#pickUp").click(function(event){
+    $("#pickup").click(function(event){
         event.preventDefault();
 
-        $("#pickUp").show();
+        $("#pickup").show();
         $("#deliverpizza").hide();
 
      var type = $("#type").val();
@@ -110,17 +110,18 @@ $(document).ready(function(){
 
      $("#pizzaForPickUp").show();
      $("#pizzaForDelivery").hide();
-     $("ul#pizzaForPickUp").append("<li>" + pizzaOrder.addEverything() + "</li>");
+     $("ul#pizzaForPickUp").append("<li>" + pizzaOrder.sumup() + "</li>");
 
     })
     $("#deliverpizza").click(function(event){
         event.preventDefault();
-
-        $("#deliverpizza").show();
-        $("#pickUp").hide();
+        $("#pickup").hide();
+        $('#location').show('2s');
+        $('#deliverpizza').hide();
         
         var locate=$("#location").val();
-        $(".pizzalocation").text("The order will be delivered at " + locate);
+        $(".pizzalocation").text("Your order shall be delivered at : " + locate);
+        $(".deliverbutton").show();
 
      var type = $("#type").val();
      var size = $(".size").val();
@@ -132,7 +133,7 @@ $(document).ready(function(){
 
      $("#pizzaForPickUp").hide();
      $("#pizzaForDelivery").show();
-     $("ul#pizzaForDelivery").append("<li>" + pizzaOrder.addEverything() + "</li>");
+     $("ul#pizzaForDelivery").append("<li>" + pizzaOrder.sumup() + "</li>");
 
     })
     $(".btn-cart").click(function(event){
@@ -143,14 +144,11 @@ $(document).ready(function(){
         var crust = $(".crust").val();
         var topping = $(".toppings").val();
         var pizzanumber =$(".quantity").val();
-   
         var pizzaOrder = new Pizza(type, size, crust, topping, pizzanumber);
-   
-        $("ul#finalorder").append("<li>" + pizzaOrder.addEverything() + "<li>");
+        $("ul#finalorder").append("<li>" + pizzaOrder.sumup() + "<li>");
 
     resetFields();
 
     });
-   
 
 });

@@ -110,39 +110,39 @@
           <div class="col-md-6">
             <u><h2> DELUXE PIZZA<span>s</span> CART</h2></u>
 
-            <ol id="pizzaForPickUp"></ol>
-            <ol id="pizzaForDelivery"></ol>
             
-            <div class="location">  
-              <div class="deliver row">
-                <label for="">How to get your pizza.</label>
-                <div class="pick col-md-6">
-                  <button class="btn-primary" id="pickup">Pick-up</button>
-                </div>
-                <div class="deliver col-md-6">
-                  <button class="btn-primary" id="deliverpizza">Delivery</button>
-                </div>
-                <div class="pizzalocation">
-                  
-                </div>
-              </div>
-              <label for="text">If its to be delivered kindly fill in the location.</label> <br>
-              <input type="text" placeholder="Type in location to be delivered." id="location"> <br>
-              
-            </div>
             <div class="order-form">
               <h4>All Orders:</h4>
               <h5>Total Price = Ksh. <span id="price"></span></h5>
               <ol id="finalorder"></ol>
-            </div>
+            </div> <hr>
+            <div class="location">  
+              <div class="deliver row">
+                <label for="">How to get your pizza.</label>
+                <p class="col-md-3"></p>
+                <div class="pick col-md-3">
+                  <button class="btn-primary" id="pickup">Pick-up</button>
+                </div>
+                <div class="deliver col-md-3">
+                  <button class="btn-primary" id="deliverpizza">Delivery</button>
+                </div>
+                <ol id="pizzaForPickUp"></ol>
+                <ol id="pizzaForDelivery"></ol>
+                <p class="col-md-3"></p>
+                <div class="pizzalocation">
+
+                </div>
+              </div>
+              <div id="location">
+                <label for="text">Fill in the location of the delivery if only in Nairobi.</label> <br>
+                <input type="text" placeholder="Type in location to be delivered.">
+              </div><button class="deliverbutton">Deliver</button><br> 
+            </div> <hr>
             <button class="btn btn-primary" id="purchase" type="button" onclick="pickUpPizza()">PURCHASE</button>
           </div>
       </div>
 
       <hr class="hr-main">
-        
-        
-       
     </div>
 
     <footer>
