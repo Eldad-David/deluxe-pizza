@@ -74,7 +74,7 @@ function Pizza( type,size,crust,toppings,pizzanumber) {
 }
 
 Pizza.prototype.addEverything = function () {
-    return '<h3>Your order is: </h3>' +  this.type  + ", " + this.size + ", " + this.crust + ", " + this.toppings + ", " + this.pizzanumber +" pizzas"; 
+    return '<h3>Your order is: </h3>' +  this.size  + ", " + this.type + ", " + this.crust + ", " + this.toppings + ", " + this.pizzanumber +" pizzas"; 
 }
 
 function deliveryPizza () {
@@ -83,7 +83,7 @@ function deliveryPizza () {
 }
 
 function pickUpPizza () {
-    alert("Your order will be ready in 20min!");
+    alert("Thank you for buying from us. Your order will be ready in 20min!");
 }
 function resetFields() {
     var type = $("select#type").val("");
@@ -120,7 +120,7 @@ $(document).ready(function(){
         $("#pickUp").hide();
         
         var locate=$("#location").val();
-        $("#deliverpizza").text("The order will be delivered at " + locate)
+        $(".pizzalocation").text("The order will be delivered at " + locate);
 
      var type = $("#type").val();
      var size = $(".size").val();
@@ -135,7 +135,7 @@ $(document).ready(function(){
      $("ul#pizzaForDelivery").append("<li>" + pizzaOrder.addEverything() + "</li>");
 
     })
-    $("#purchase").click(function(event){
+    $(".btn-cart").click(function(event){
         event.preventDefault();
 
         var type = $("#type").val();
@@ -146,7 +146,7 @@ $(document).ready(function(){
    
         var pizzaOrder = new Pizza(type, size, crust, topping, pizzanumber);
    
-        $("ul#finalorder").append("<li>" + pizzaOrder.addEverything() + "</li>");
+        $("ul#finalorder").append("<li>" + pizzaOrder.addEverything() + "<li>");
 
     resetFields();
 

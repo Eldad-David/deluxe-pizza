@@ -104,28 +104,38 @@
             </select>
             <h5>Quantity</h5>
             <input type="number" name="" class="quantity"> <br>
-            <button type="submit" class="btn-cart"  id="priceCheckout" onclick="pizzaPrice()">Add to Cart</button>
+            <button type="submit" class="btn-cart"  id="pizzaCheckout" onclick="pizzaPrice()">Add to Cart</button>
           </div>
 
           <div class="col-md-6">
             <u><h2> DELUXE PIZZA<span>s</span> CART</h2></u>
-            <ul id="pizzaForPickUp"></ul>
-            <ul id="pizzaForDelivery"></ul>
-              
-            <h4>All Orders:</h4>
-            <h5>Total Price = Ksh. <span id="price"></span></h5>
-            <ul id="finalorder"></ul>
+
+            <ol id="pizzaForPickUp"></ol>
+            <ol id="pizzaForDelivery"></ol>
+            
             <div class="location">  
               <div class="deliver row">
                 <label for="">How to get your pizza.</label>
-                <button class="btn-primary" id="pickup">Pick-up</button>
-                <button class="btn-primary" id="delicerpizza">Delivery</button>
+                <div class="pick col-md-6">
+                  <button class="btn-primary" id="pickup">Pick-up</button>
+                </div>
+                <div class="deliver col-md-6">
+                  <button class="btn-primary" id="deliverpizza">Delivery</button>
+                </div>
+                <div class="pizzalocation">
+                  
+                </div>
               </div>
               <label for="text">If its to be delivered kindly fill in the location.</label> <br>
               <input type="text" placeholder="Type in location to be delivered." id="location"> <br>
-              <button class="btn btn-primary" id="purchase" type="button" onclick="pickUpPizza()">PURCHASE</button>
+              
             </div>
-            
+            <div class="order-form">
+              <h4>All Orders:</h4>
+              <h5>Total Price = Ksh. <span id="price"></span></h5>
+              <ol id="finalorder"></ol>
+            </div>
+            <button class="btn btn-primary" id="purchase" type="button" onclick="pickUpPizza()">PURCHASE</button>
           </div>
       </div>
 
